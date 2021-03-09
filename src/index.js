@@ -1,31 +1,23 @@
-
-exports.min = function min(arr) {
-    if (!arr || arr.length == 0) {
-        return 0;
-    }
-    return Math.min(...arr);
+exports.min = function min (array) {
+    if (array){
+        return (array.length !== 0) ? Math.min(...array) : 0;
+    } else {return 0}
 };
 
 
-exports.max = function max(arr) {
-    if (!arr || arr.length == 0) {
-        return 0;
-    }
-    return Math.max(...arr);
+exports.max = function max (array) {
+    if (array){
+    return (array.length !== 0) ? Math.max(...array) : 0;
+    } else {return 0}
 };
 
 
-exports.avg = function avg(arr) {
-    if (!arr || arr.length == 0) {
-        return 0;
-        let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += Number(arr[i]);
-    }
-    return sum / arr.length;
+exports.avg = function avg (array) {
+    if (array) {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        return (array.length !== 0) ? (array.reduce(reducer) / array.length) : 0;
+    } else {return 0}
 };
-
-
 
 
 
