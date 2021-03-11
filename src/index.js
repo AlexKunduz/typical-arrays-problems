@@ -1,26 +1,23 @@
 exports.min = function min (array) {
-    if (array){
-        return (array.length !== 0) ? Math.min(...array) : 0;
-    } else {return 0}
+    if (array === undefined || array.length == 0) {
+        return 0;
+    } else {
+        return Math.min.apply(null, array);      
+    }
 };
-
 
 exports.max = function max (array) {
-    if (array){
-    return (array.length !== 0) ? Math.max(...array) : 0;
-    } else {return 0}
+    if (array === undefined || array.length == 0) {
+        return 0;
+    } else {
+    return Math.max.apply(null, array);     
+    }
 };
-
 
 exports.avg = function avg (array) {
-    if (array) {
-        const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        return (array.length !== 0) ? (array.reduce(reducer) / array.length) : 0;
-    } else {return 0}
+    if (array === undefined || array.length == 0) {
+        return 0;
+    } else {
+    return array.reduce((a, b) => (a + b)) / array.length;        
+    }
 };
-
-
-
-
-
-
